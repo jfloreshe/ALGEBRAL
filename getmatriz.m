@@ -34,7 +34,7 @@ function getmatriz(choice)
         matrizApath = fullfile(folder,name);
         A = dlmread(matrizApath);
       case "B"
-        [name,folder] = uigetfile("*.tex");
+        [name,folder] = uigetfile("*.tex","agregando una matriz","./MATRICES/");
         matrizBpath = fullfile(folder,name);
         B = dlmread(matrizBpath);
       otherwise

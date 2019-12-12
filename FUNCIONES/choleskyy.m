@@ -1,4 +1,4 @@
-function choleskyy( A )
+function [H,H2] = choleskyy( A )
   n = size( A, 1 );
   H = zeros( n );
   H2 = zeros( n );
@@ -18,6 +18,4 @@ function choleskyy( A )
     H( k, k ) = sqrt( A( k, k ) - sum2 );
     H2( k, k ) = H(k,k);
   end
-  H
-  H2
 end

@@ -1,19 +1,20 @@
-function gaussJ(A)
-  [m n] = size(A);
+function RA = gaussJ(A)
+  RA = A;
+  [m n] = size(RA);
   for k=1:(m)#pivote diagonal 1,1 2,2 3,3
-    if (A(k,k) != 1)      
-      uno = A(k,k);
+    if (RA(k,k) != 1)      
+      uno = RA(k,k);
       for ii=k:n
-        A(k,ii) =  A(k,ii)/uno;
+        RA(k,ii) =  RA(k,ii)/uno;
       endfor
     endif
     for i=1:m
       if(i!=k)
-        Mik = A(i,k)/A(k,k);
+        Mik = RA(i,k)/RA(k,k);
         for j = k:n
-          A(i,j) = -(Mik)*A(k,j) + A(i,j);
+          RA(i,j) = -(Mik)*RA(k,j) + RA(i,j);
         end
       endif
      end
    end
-   A
+   

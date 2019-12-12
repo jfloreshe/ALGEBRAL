@@ -1,4 +1,4 @@
-function LU(A)
+function [L,U] = LU(A)
   [m n] = size(A);
   L = zeros(m,n);  
   U = A;
@@ -13,5 +13,4 @@ function LU(A)
      end;
    end;   
    L(m,m) = 1;
-   L
-   U
+ 

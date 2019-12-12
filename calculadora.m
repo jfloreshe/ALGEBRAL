@@ -3,7 +3,10 @@ function calculadora()
   # uipanel o layers nos dibuja un panel sobre una figura y la posicion es en porcentajes inicio y tamaño
   # los botones o uicontrol usa posiciones directas
   #INICIALIZACION DE COSAS
-   #SIZE
+  #########PATHS A MIS FUNCIONES############
+  addpath ("./FUNCIONES/")
+  ###############################
+  #####INIT GLOBALS#################
   global iniciox = 0;
   global inicioy = 0;
   global botonW = 180;
@@ -28,7 +31,7 @@ function calculadora()
   paleta4b = 52/255;
   global paleta4 = [paleta4r paleta4g paleta4b];
   #FIGURAS
-  f = figure("toolbar","none","position",[340 inicioy screenW screenH]);
+  f = figure("toolbar","none","position",[340 inicioy screenW screenH],"name","CALCULADORA");
   global window = f;
   panel_principal = uipanel("title","CALCULADORA DE MATRICES","position",[0 0 1 1],"backgroundcolor",paleta2,"fontweight","bold","fontsize",12);
   #GRUPO DE BOTONES

@@ -1,15 +1,13 @@
-function mc(X,Y,n)
-  Sx = 0;
-  Sy = 0;
-  Sx2 = 0;
-  Sxy = 0;
-  for i=1:n
-    Sx = Sx + X(i);
-    Sy = Sy + Y(i);
-    Sx2 = Sx2 + X(i)*X(i);
-    Sxy = Sxy + X(i)*Y(i);
-  end
-  A = rref([Sx n Sy; Sx2 Sx Sxy])
-  m = A(1,3)
-  b = A(2,3)
-  fprintf('y= %fx + %f\n',m,b);
+function mc(x,y)
+  f = figure();
+  clf(f);
+  m = length(x);
+  % Add a column of all ones (intercept term) to x
+  X = [ones(m, 1) x];
+  theta = (pinv(X'*X))*X'*y;  
+  plot(x,y,'rx','MarkerSize',8) % Plot the data
+  hold on;  
+  plot(X(:,2), X*theta,'-');
+  hold off
+  finalm = strcat("la ecuacion de la recta es\n y = ",mat2str(theta(2)),"x + ",mat2str(theta(1)));
+  msgbox(finalm);
